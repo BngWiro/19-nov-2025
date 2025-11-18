@@ -4,7 +4,7 @@
   // CONFIG
   // ================================
   // FIX: format tanggal aman untuk semua browser
-  const BIRTHDAY = new Date(2025, 10, 19, 0, 0, 0);
+  const BIRTHDAY = new Date(2025, 11, 19, 0, 0, 0);
 
   const cakeArea = document.getElementById('cakeArea');
   const matchImg = document.getElementById('matchImg');
@@ -321,3 +321,4 @@
   })();
 
 })();
+
