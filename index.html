@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>Selamat Ulang Tahun, Keisya 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="badge">19 November 2025</div>
+      <h1 class="title">Keisya Salsabe <span>(kesaaa)</span></h1>
+
+      <div id="countdownWrap" class="countdown-wrap" aria-live="polite">
+        <div class="countdown">
+          <div class="count-box"><span id="days">0</span><small>hari</small></div>
+          <div class="count-box"><span id="hours">00</span><small>jam</small></div>
+          <div class="count-box"><span id="minutes">00</span><small>menit</small></div>
+          <div class="count-box"><span id="seconds">00</span><small>detik</small></div>
+        </div>
+      </div>
+
+      <p id="hint" class="hint"></p>
+      <div id="matchNotice" class="match-notice hidden"></div>
+    </header>
+
+    <main class="main-stage">
+      <section id="cakeArea" class="cake-area hidden" aria-hidden="true">
+        <div class="cake-card">
+          <!-- cake SVG (keeps responsive & light) -->
+          <svg id="cakeSvg" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <ellipse cx="320" cy="320" rx="220" ry="22" fill="#fff6fb" stroke="#ffe6f2"/>
+            <g id="cakeBody">
+              <rect x="100" y="140" rx="28" ry="28" width="440" height="140" fill="#ffdfe9" stroke="#ffc9dd"/>
+              <rect x="100" y="120" rx="28" ry="28" width="440" height="36" fill="#fff6fb"/>
+              <g fill="#ff9fcf">
+                <circle cx="180" cy="190" r="7"/><circle cx="240" cy="208" r="7"/>
+                <circle cx="300" cy="190" r="7"/><circle cx="360" cy="208" r="7"/>
+                <circle cx="420" cy="190" r="7"/><circle cx="480" cy="208" r="7"/>
+              </g>
+            </g>
+
+            <!-- candles -->
+            <g id="candles">
+              <g class="candle" id="c1" transform="translate(240,100)">
+                <rect class="stem" x="-8" y="0" width="16" height="56" rx="4" fill="#fff"/>
+                <rect x="-8" y="0" width="16" height="16" rx="4" fill="#ffd6e8"/>
+                <rect class="wick" x="-1.5" y="-8" width="3" height="8" fill="#2b2b2b"/>
+                <g class="flame hidden" transform="translate(0,-14)">
+                  <path d="M0 0 C5 -6, 5 -12, 0 -18 C-5 -12, -5 -6, 0 0 Z" fill="#ffd36b"/>
+                  <path d="M0 -6 C2 -9, 2 -12, 0 -14 C-2 -12, -2 -9, 0 -6 Z" fill="#ff8b45"/>
+                </g>
+              </g>
+
+              <g class="candle" id="c2" transform="translate(320,92)">
+                <rect class="stem" x="-8" y="0" width="16" height="64" rx="4" fill="#fff"/>
+                <rect x="-8" y="0" width="16" height="16" rx="4" fill="#fff1f7"/>
+                <rect class="wick" x="-1.5" y="-8" width="3" height="8" fill="#2b2b2b"/>
+                <g class="flame hidden" transform="translate(0,-16)">
+                  <path d="M0 0 C5 -6, 5 -12, 0 -18 C-5 -12, -5 -6, 0 0 Z" fill="#ffd36b"/>
+                  <path d="M0 -6 C2 -9, 2 -12, 0 -14 C-2 -12, -2 -9, 0 -6 Z" fill="#ff8b45"/>
+                </g>
+              </g>
+
+              <g class="candle" id="c3" transform="translate(400,100)">
+                <rect class="stem" x="-8" y="0" width="16" height="56" rx="4" fill="#fff"/>
+                <rect x="-8" y="0" width="16" height="16" rx="4" fill="#ffe6f0"/>
+                <rect class="wick" x="-1.5" y="-8" width="3" height="8" fill="#2b2b2b"/>
+                <g class="flame hidden" transform="translate(0,-14)">
+                  <path d="M0 0 C5 -6, 5 -12, 0 -18 C-5 -12, -5 -6, 0 0 Z" fill="#ffd36b"/>
+                  <path d="M0 -6 C2 -9, 2 -12, 0 -14 C-2 -12, -2 -9, 0 -6 Z" fill="#ff8b45"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+
+          <div id="cakeText" class="cake-text hidden">
+            <h2>Selamat Ulang Tahun, Keisya!</h2>
+            <p>Semoga harimu dipenuhi kebahagiaan dan cinta — aku sayang kamu 💖</p>
+          </div>
+        </div>
+
+        <!-- match as an image (off by default). images sourced below -->
+        <img id="matchImg" class="match-img hidden" alt="korek" draggable="false" />
+      </section>
+    </main>
+
+    <!-- dialog modal -->
+    <div id="dialogWrap" class="dialog-wrap hidden" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+      <div class="dialog">
+        <h3 id="dialogTitle">Pesan untuk Keisya</h3>
+        <div id="dialogBody" class="dialog-body" tabindex="0"></div>
+        <div class="dialog-controls">
+          <button id="backBtn" class="ghost">Back</button>
+          <button id="nextBtn" class="primary">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">© 2025 Dibuat khusus untuk Keisya</footer>
+
+    <!-- audio -->
+    <audio id="strikeAudio" src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_f3d9c2c3e5.mp3?filename=match-strike-5660.mp3" preload="auto"></audio>
+    <audio id="birthdayAudio" src="https://cdn.pixabay.com/download/audio/2023/01/26/audio_7c631aef1d.mp3?filename=happy-birthday-piano-music-135128.mp3" preload="auto"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
