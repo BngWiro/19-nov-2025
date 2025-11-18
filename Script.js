@@ -1,6 +1,6 @@
 (function(){
   // CONFIG
-  const BIRTHDAY = new Date('2025-11-09T00:00:00'); // local midnight
+  const BIRTHDAY = new Date('2025-11-19T00:00:00'); // local midnight
   const cakeArea = document.getElementById('cakeArea');
   const matchImg = document.getElementById('matchImg');
   const strikeAudio = document.getElementById('strikeAudio');
@@ -275,3 +275,4 @@
   })();
 
 })();
+
